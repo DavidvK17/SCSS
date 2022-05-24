@@ -44,6 +44,12 @@ $j: 2;
   $j: $j + 2;
 }
 
+@for $i from 1 through $total {
+  .col-#{$i} {
+    width: column-width($i);
+  }
+}
+
 /*COSMETIC */
 body {
   @include fancy-links;
@@ -132,7 +138,7 @@ ul {
     }
   }
 
-  .btn-close {
+  .btn--close {
     position: absolute;
     top: $spacing/2;
     right: $spacing/2;
@@ -160,5 +166,24 @@ ul {
         border-bottom: 1px solid opacify(#fefefe, 0.5);
       }
     }
+  }
+}
+
+.block {
+  border: 3px solid red;
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-around;
+
+  &__element {
+    border: 1px solid #fff;
+    width: 40%;
+    padding: 15px;
+  }
+
+  &--light {
+    background-color: #fff;
+    color: #000;
   }
 }
