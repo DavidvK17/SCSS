@@ -322,7 +322,7 @@ ul a:hover {
   padding: 15px;
 }
 
-.block--light {
+.block__element--light {
   background-color: #fff;
   color: #000;
 }
