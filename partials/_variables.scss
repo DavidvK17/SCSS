@@ -1,0 +1,30 @@
+// === THEME ===
+// Allowed values: Dark, Light, Default
+$theme: Dark;
+
+// === BRANDS ===
+// Allowed values: Celtics, Default
+$brand: celtics;
+
+$col-primary: lightblue;
+$col-secondary: darkblue;
+$col-tertiary: #fff;
+$col-fourth: #333;
+$spacing: 3rem;
+$link-color: red;
+
+@if $theme == Dark {
+  $col-primary: black;
+  $col-secondary: lightgrey;
+  $col-tertiary: #efefef;
+  $col-fourth: #333;
+  $spacing: 3rem;
+  $link-color: lightblue;
+} @else if $theme == Light {
+  $col-primary: #efefef;
+  $col-secondary: #000;
+  $col-tertiary: #fff;
+  $col-fourth: #666;
+  $spacing: 3rem;
+  $link-color: orange;
+}

@@ -1,0 +1,82 @@
+@mixin celtics {
+  @if $brand == celtics {
+    @content;
+  }
+}
+
+@mixin link-hover {
+  border-bottom: 1px solid transparentize(#fefefe, 1);
+  transition: border-bottom 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin link-animation {
+  color: lighten($link-color, 15%);
+  border-bottom: 1px solid opacify(#fefefe, 0.5);
+}
+
+@mixin warning {
+  background-color: orange;
+  color: #fff;
+}
+
+@mixin large-text($font: 14px) {
+  font: {
+    size: $font;
+    weight: bold;
+  }
+}
+
+@mixin fancy-links {
+  a {
+    font-style: italic;
+  }
+}
+
+@mixin box($padding) {
+  padding: $padding;
+  @include rounded();
+}
+
+@mixin rounded($radius: 5px, $border: 1px solid red) {
+  border-radius: $radius;
+  border: $border;
+}
+
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
+}
+
+@mixin resize-large {
+  @media (min-width: 600px) {
+    @include large-text($font: 25px);
+  }
+
+  @media (min-width: 800px) {
+    @include large-text($font: 35px);
+  }
+
+  @media (min-width: 1200px) {
+    @include large-text($font: 50px);
+  }
+}
+
+@mixin resize-small {
+  @media (min-width: 600px) {
+    @include large-text($font: 18px);
+  }
+
+  @media (min-width: 800px) {
+    @include large-text($font: 25px);
+  }
+
+  @media (min-width: 1200px) {
+    @include large-text($font: 25px);
+  }
+}
