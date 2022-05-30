@@ -4,6 +4,17 @@
   }
 }
 
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
+}
+
+@mixin google-font($font) {
+  $font: unquote($font);
+  @import url(https://fonts.googleapis.com/css2?family=#{$font});
+}
+
 @mixin link-hover {
   border-bottom: 1px solid transparentize(#fefefe, 1);
   transition: border-bottom 0.5s;
@@ -43,6 +54,7 @@
   border: $border;
 }
 
+// varArg
 @mixin box-shadow($shadows...) {
   box-shadow: $shadows;
 }

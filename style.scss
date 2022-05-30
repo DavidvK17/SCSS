@@ -3,6 +3,9 @@
 @import "partials/mixins";
 @import "partials/functions";
 
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
 // // Normal CSS imports
 // @import url();
 // @import 'http://';
@@ -55,8 +58,11 @@ body {
   @include fancy-links;
   background: $col-fourth;
   color: #fff;
-  font-family: sans-serif;
+  font-family: $text-font;
   font-size: em(18px);
+  @media only screen and (max-width: 960px) {
+    background-color: lightcoral;
+  }
 }
 
 @include apply-to-ie-6 {
